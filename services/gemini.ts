@@ -1,7 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
 
 const getAI = () => {
-  const apiKey = process.env.API_KEY;
+  // Use optional chaining or check existence to prevent crashes
+  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : null;
+  
   if (!apiKey) {
     console.warn("D-Co Gemini Service: Missing API Key. Operating in Demo mode.");
     return null;
@@ -13,7 +15,6 @@ export async function askTaxAssistant(question: string) {
   try {
     const ai = getAI();
     if (!ai) {
-      // Demo fallback response
       return "I'm currently in Demo Mode because a Gemini API key isn't configured in this environment. However, D-Co Management Services is ready to help you with Personal Tax, Bookkeeping, and Estates! You can reach us at info@dcomanagement.ca.";
     }
 
