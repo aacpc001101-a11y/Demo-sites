@@ -1,6 +1,5 @@
-
 import React, { useState, useRef, useEffect } from 'react';
-import { askTaxAssistant } from '../services/gemini';
+import { askTaxAssistant } from '../services/gemini.ts';
 
 const TaxAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +31,6 @@ const TaxAssistant: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-[60]">
-      {/* Assistant Bubble */}
       {isOpen && (
         <div className="bg-white rounded-2xl shadow-2xl w-80 sm:w-96 border border-slate-200 mb-4 overflow-hidden flex flex-col h-[450px] animate-in slide-in-from-bottom-2 duration-300">
           <div className="bg-blue-600 p-4 flex justify-between items-center text-white">
@@ -91,7 +89,6 @@ const TaxAssistant: React.FC = () => {
         </div>
       )}
 
-      {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group"
