@@ -1,14 +1,13 @@
-
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Booking from './pages/Booking';
-import Contact from './pages/Contact';
-import TaxAssistant from './components/TaxAssistant';
+import Navbar from './components/Navbar.tsx';
+import Footer from './components/Footer.tsx';
+import Home from './pages/Home.tsx';
+import About from './pages/About.tsx';
+import Services from './pages/Services.tsx';
+import Booking from './pages/Booking.tsx';
+import Contact from './pages/Contact.tsx';
+import TaxAssistant from './components/TaxAssistant.tsx';
 
 const App: React.FC = () => {
   return (
@@ -25,7 +24,6 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
-        {/* Floating AI Assistant Toggle */}
         <TaxAssistant />
       </div>
     </Router>
